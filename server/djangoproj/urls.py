@@ -28,8 +28,14 @@ urlpatterns = [
     path("contact/", TemplateView.as_view(template_name="Contact.html")),
     path("login/", TemplateView.as_view(template_name="index.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
-    path("dealer/<int:dealer_id>",
+    path("dealers/", TemplateView.as_view(template_name="index.html")),
+    path("dealers/<int:dealer_id>",
          TemplateView.as_view(template_name="index.html")),
+    path("get_dealers", TemplateView.as_view(template_name="index.html")),
+    path(
+        "get_dealers/<str:state>",
+        TemplateView.as_view(template_name="index.html")
+    ),
     path(
         "postreview/<int:dealer_id>",
         TemplateView.as_view(template_name="index.html")

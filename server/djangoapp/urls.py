@@ -9,7 +9,7 @@ urlpatterns = [
     # # path for registration
     # path for login
     path(route="login", view=views.login_user, name="login"),
-    path(route="register", view=views.login_user, name="register"),
+    path(route="register", view=views.registration, name="register"),
     path(route="logout", view=views.logout_request, name="logout"),
     path(route="register", view=views.registration, name="register"),
     path(route="get_cars", view=views.get_cars, name="getcars"),
@@ -20,7 +20,7 @@ urlpatterns = [
         name="get_dealers_by_state",
     ),
     path(
-        route="dealer/<int:dealer_id>",
+        route="dealers/<int:dealer_id>",
         view=views.get_dealer_details,
         name="dealer_details",
     ),
