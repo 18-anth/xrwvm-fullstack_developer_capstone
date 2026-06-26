@@ -132,6 +132,8 @@ def get_dealer_reviews(request, dealer_id):
             response = analyze_review_sentiments(review_detail["review"])
             print(response)
             review_detail["sentiment"] = response["sentiment"]
+            
+        print("FINAL REVIEWS:", reviews)   # <-- Agrega esta línea
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
