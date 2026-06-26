@@ -53,7 +53,7 @@
           </li>
           <li class="nav-item">
             {% if user.is_authenticated %}
-            <form method="post" action="{% url 'logout' %}">
+            <form method="post" action="{% url 'djangoapp:logout' %}">
               {% csrf_token %}
               <button type="submit" class="nav-link btn btn-link">
                 Logout
