@@ -53,6 +53,7 @@ def logout_request(request):
 
 
 # ...
+@csrf_exempt
 def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
