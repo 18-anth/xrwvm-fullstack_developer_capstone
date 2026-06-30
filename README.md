@@ -1,5 +1,11 @@
-# Repository name rwvm-fullstack_developer_capstone.git
+# fullstack_developer_capstone
 
-## Project name coding-project-template
+Full Stack Developer Capstone Project.
 
+## Repository
+
+Repository Name:
+rwvm-fullstack_developer_capstone
+
+Repository URL:
 <https://github.com/18-anth/rwvm-fullstack_developer_capstone.git>
