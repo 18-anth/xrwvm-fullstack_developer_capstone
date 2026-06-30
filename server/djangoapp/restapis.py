@@ -2,7 +2,6 @@
 import requests
 import os
 from dotenv import load_dotenv
-from urllib.parse import quote
 
 load_dotenv()
 
