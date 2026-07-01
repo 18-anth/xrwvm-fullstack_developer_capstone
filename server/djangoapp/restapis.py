@@ -1,4 +1,5 @@
 # Uncomment the imports below before you add the function code
+from urllib.parse import quote
 import requests
 import os
 from dotenv import load_dotenv
@@ -58,24 +59,27 @@ def searchcars_request(endpoint, **kwargs):
         response = requests.get(request_url)
         return response.json()
     except Exception as e:
-        # If any error occurs
-        print(e + "Network exception occurred")
+        print("Network exception occurred", e)
     finally:
         print("GET request call complete!")
 
 
 def analyze_review_sentiments(text):
-    request_url = f"{sentiment_analyzer_url}/analyze/{text}"
+    request_url = (
+        f"{sentiment_analyzer_url.rstrip('/')}/analyze/{quote(text)}"
+    )
 
     try:
         print("REQUEST:", request_url)
-        response = requests.get(request_url)
+
+        response = requests.get(request_url, timeout=10)
         response.raise_for_status()
+
         return response.json()
 
-    except Exception as err:
-        print(err)
-        return None
+    except requests.exceptions.RequestException as err:
+        print("Sentiment service error:", err)
+        return {"sentiment": "neutral"}
 
 
 # Add code for retrieving sentiments
