@@ -29,9 +29,9 @@ const Dealer = () => {
         try {
             const res = await fetch(dealer_url);
             const retobj = await res.json();
-    
+
             console.log(retobj);
-    
+
             if (retobj.status === 200) {
                 setDealer(retobj.dealer);
             }
@@ -97,6 +97,7 @@ const Dealer = () => {
                     <h4 style={{ color: "grey" }}>
                         {dealer.city}, {dealer.address}, Zip - {dealer.zip}, {dealer.state}
                     </h4>
+                    <a href={`/searchcars/${id}`}>SearchCars</a>
                 </div>
 
                 <div className="reviews_panel">
@@ -120,6 +121,7 @@ const Dealer = () => {
                         ))
                     )}
                 </div>
+
             </div>
         </>
 
