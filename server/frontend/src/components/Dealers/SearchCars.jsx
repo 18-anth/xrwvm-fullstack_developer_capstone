@@ -22,7 +22,7 @@ const SearchCars = () => {
         const retobj = await res.json();
         if (retobj.status === 200) {
             let dealer = retobj.dealer;
-            setDealer({ "full_name": dealer[0].full_name })
+            setDealer({ "full_name": dealer.full_name })
         }
     }
 
